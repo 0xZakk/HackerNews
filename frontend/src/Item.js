@@ -1,16 +1,37 @@
-import React from "react";
-import "./Item.css";
+import React from 'react';
+import styled from 'react-emotion';
 
-function Item({ title, url }) {
+const Card = styled('section')`
+  background-color: white;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`;
+
+function Item({ data }) {
+  console.log('here', data);
   return (
-    <section>
-      <div>
-        <a href={url} target="_blank">
-          {title}
+    <Card>
+      <h2>
+        <a href={data.url} target="_blank" rel="noopener noreferrer">
+          {data.title}
         </a>
-      </div>
-    </section>
+      </h2>
+      <p>Owner: {data.owner}</p>
+    </Card>
   );
 }
+
+Item.defaultProps = {
+  data: {
+    url: '',
+    title: '',
+    owner: ''
+  }
+};
 
 export default Item;
