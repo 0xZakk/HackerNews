@@ -3,6 +3,8 @@
 This is a simple clone of [hacker news](http://news.ycombinator.com) built using
 Django, Django REST Framework, and React.
 
+<img width="1552" alt="screen shot 2018-11-27 at 3 15 12 pm" src="https://user-images.githubusercontent.com/4991553/49108897-4cd67600-f257-11e8-9e15-2f0503e1edd9.png">
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your
