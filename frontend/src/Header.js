@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'react-emotion';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "react-emotion";
 
-const HeaderContainer = styled('header')`
+const HeaderContainer = styled("header")`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,6 +28,7 @@ const HeaderContainer = styled('header')`
 `;
 
 function Header(props) {
+  console.log(props);
   return (
     <HeaderContainer>
       <Link to="/">
@@ -35,14 +36,22 @@ function Header(props) {
       </Link>
 
       <nav>
-        <ul>
-          <li>
-            <Link to="/sign-in">Sign In</Link>
-          </li>
-          <li>
-            <Link to="/sign-up">Sign Up</Link>
-          </li>
-        </ul>
+        {!props.username ? (
+          <ul>
+            <li>
+              <Link to="/sign-in">Sign In</Link>
+            </li>
+            <li>
+              <Link to="/sign-up">Sign Up</Link>
+            </li>
+          </ul>
+        ) : (
+          <ul>
+            <li>
+              <Link to="/item/new">(+)</Link>
+            </li>
+          </ul>
+        )}
       </nav>
     </HeaderContainer>
   );
